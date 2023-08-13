@@ -37,8 +37,9 @@ def tweet():
         videoTweet.tweet()
 
     if file['extension'] == 'png' or file['extension'] == 'jpg':
-        imageTweet = ImageTweet(file['title'])
-        imageTweet.tweet()
+        imageTweet = ImageTweet()
+        imageTweet.tweet(file['title'])
+        os.remove(file['title'])
 
 def ping():
 
